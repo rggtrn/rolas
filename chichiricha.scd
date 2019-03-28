@@ -17,35 +17,36 @@ Mel.detener;
 Mel2.detener;
 )
 ////////dos///////////
-Bajo.toca(inst: 'bajo2', db: -37, nota: Pseq ([62, 69, 65], inf), dur: Pseq ([1.5, 1.5, 13]/2,inf), rel: Pseq ([1.5, 1.5, 10]/1.5,inf));
+Bajo.toca(inst: 'bajo2', db: -17, nota: Pseq ([62, 69, 65], inf), dur: Pseq ([1.5, 1.5, 13]/2,inf), rel: Pseq ([1.5, 1.5, 10]/1.5,inf));
 
 //////////tres////////////////
-Ritmo.toca(campanaDb:-200, campanaDur: 1, guiraDb: -25, timbalesDur: Pseq ([0.5], inf), timbalesNum: 0, congaCDb: Pseq ([-14, -17, -15, -20 ], inf) ,congaODb: -19);
+Ritmo.toca(campanaDb:-200, campanaDur: 1, guiraDb: -25, timbalesDur: Pseq ([0.5], inf), timbalesNum: 0, congaCDb: Pseq ([-14, -17, -15, -20 ], inf) ,congaODb: -25);
 
 //////////cuatro////////////////
 
-Bajo.toca(inst: 'bajo2', db: -37, nota:Pseq ([Pseq ([62, 69, 65], 1),  Pseq ([62, 69, 65, 60], 1)], inf), dur: Pseq ([Pseq ([1.5, 1.5,  13]/2,1), Pseq ([1.5, 1.5,  13]/2,1)], inf), rel:Pseq ([Pseq ([1.5, 1.5, 13]/1.5,1), Pseq ([1.5, 1.5,  13]/1.5,1)], inf));
+Bajo.toca(inst: 'bajo2', db: -17, nota:Pseq ([Pseq ([62, 69, 65], 1),  Pseq ([62, 69, 65, 60], 1)], inf), dur: Pseq ([Pseq ([1.5, 1.5,  13]/2,1), Pseq ([1.5, 1.5,  13]/2,1)], inf), rel:Pseq ([Pseq ([1.5, 1.5, 13]/1.5,1), Pseq ([1.5, 1.5,  13]/1.5,1)], inf));
 
 
-Ritmo.toca(campanaPan: -0.8, campanaDb: -20, campanaDur: 1, guiraDb: -25, timbalesDur: Pseq ([0.25], inf), timbalesNum: 0, congaCDb: Pseq ([-17, -20, -18, -24]*1.5, inf), congaOfreq: Prand (#[0, r, 0.5, r, 1], inf),  congaODb: Pseq ([-23, -25, -28, -30], inf));
+Ritmo.toca(campanaPan: -0.8, campanaDb: -25, campanaDur: 1, guiraDb: -25, timbalesDur: Pseq ([0.25], inf), timbalesNum: 0, congaCDb: Pseq ([-17, -20, -18, -24]*1.5, inf), congaOfreq: Prand (#[0, r, 0.5, r, 1], inf),  congaODb: Pseq ([-23, -25, -28, -30], inf));
 ///////////////cuatro
 (
-Ritmo.toca(campanaPan: -0.8, campanaDb: -20, campanaDur: 1, guiraDb: -25, timbalesDur: Pseq ([0.25], inf), timbalesNum: 0, congaCDb: Pseq ([-14, -17, -15, -20 ], inf), congaOfreq: Pseq (#[r,r,r,r,  r, r, 1,r,   r,r,r,r,   r, r, 1,1], inf), congaODb: -19);
+Ritmo.toca(campanaPan: -0.8, campanaDb: -25, campanaDur: 1, guiraDb: -25, timbalesDur: Pseq ([0.25], inf), timbalesNum: 0, congaCDb: Pseq ([-14, -17, -15, -20 ], inf), congaOfreq: Pseq (#[r,r,r,r,  r, r, 1,r,   r,r,r,r,   r, r, 1,1], inf), congaODb: -19);
 
-Bajo.toca(inst: 'bajo2', db: -37, nota: Pseq ([62, 69, 65, 60, 64], inf), dur: Pseq ([1.5, 1.5, 1,  3, 1]/2,inf), rel: Pseq ([1.5, 1.5, 1, 3, 1]/1.5,inf));
+Bajo.toca(inst: 'bajo2', db: -30, nota: Pseq ([62, 69, 65, 60, 64], inf), dur: Pseq ([1.5, 1.5, 1,  3, 1]/2,inf), rel: Pseq ([1.5, 1.5, 1, 3, 1]/1.5,inf));
 
 Teclado.toca(inst: 'pad3', pan: 0.8, db: Pseq ([-24, -27, -30, -34]*1, inf),  nota: Pseq ([[62, 74], [65, 77], [69, 81], [62, 72], [65, 77], [69, 81], [60, 72], [64, 76], [67, 79], [60, 72], [64, 76], [67, 79]]-12, inf), dur: Pseq ([1.5, 1.5, 1]/4,inf), rel: Pseq ([1.5, 1.5, 1]/3,inf));
 )
 
 ////////////cinco//////////////
-Mel.toca(inst: 'pad2', pan: -0.8, nota: Pseq ([69, 62], inf) + Pseq ([0, 12], inf), dur: Pseq ([0.5, 0.25, 0.75, 0.5], inf), rel: Pseq ([4, 2], inf), db:-24);
+Mel.toca(inst: 'pad2', pan: -0.8, nota: Pseq ([69, 62], inf) + Pseq ([0, 12], inf), dur: Pseq ([0.5, 0.25, 0.75, 0.5], inf), rel: Pseq ([4, 2], inf), db:-27);
 (
-Mel.toca(inst: 'pad2', pan: -0.8, nota: ~nota + Pseq ([0, 12], inf), dur: Pseq ([0.25, 0.25], inf), rel: Pseq ([4, 2], inf),db:-22);
+Mel.toca(inst: 'pad2', pan: -0.8, nota: ~nota + Pseq ([0, 12], inf), dur: Pseq ([0.25, 0.25], inf), rel: Pseq ([4, 2], inf),db:-25);
 
-Mel2.toca(inst: 'mel2', pan: 0.8, nota:  ~nota + Pseq ([0, 24], inf), dur: Pseq ([0.25, 0.25], inf), rel: Pseq ([4, 2], inf), db:-23);
+Mel2.toca(inst: 'mel2', pan: 0.8, nota:  ~nota + Pseq ([0, 24], inf), dur: Pseq ([0.25, 0.25], inf), rel: Pseq ([4, 2], inf), db:-25);
 )
 
-~nota = Pseq (#[69, 62, 60, 64, 67, 60, 62], inf);
+// 62, 60, 64, 67, 60, 62
+~nota = Pseq (#[69], inf);
 ////////////////seis
 Bajo.toca(inst: 'bajo2', db: -40, nota: Pseq ([62, 69, 65, 60, 69, 64], inf), dur: Pseq ([1.5, 1.5, 1,  1.5, 1.5, 1]/2,inf), rel: Pseq ([1.5, 1.5, 1, 1.5, 1.5, 1]/1.5,inf));
 

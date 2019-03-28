@@ -1,7 +1,5 @@
-s.record("~/tour2018/recordings/cumbiaDigital4.wav".standardizePath);
-s.stopRecording;
 RGGTRN.turboCargar;
-t = TempoClock.tempo = 70/60;
+t = TempoClock.tempo = 90/60;
 
 
 Vox.decir (buffer: Prand ([RGGTRN.fuerte], inf), db:-10, rel: 35, pan: Pseq ([-0.8, 0, 0.8], inf));
@@ -57,21 +55,26 @@ Pbindef (\jarana,
 ///////////////////dos
 
 (
-(
-Mel.toca (pan: Prand([-0.8, 0, 0.8], inf), nota: Pseq ([[57, 60, 64+12]], inf),
-	db: -24, inst: 'mel4', dur: Prand ([0.5, 0.25], inf), rel: Prand ([1, 2], inf), arpegiar: 1/4)
-);
+/*(
+Mel.toca (pan: Prand([-0.8, 0, 0.8], inf), nota: Pseq ([Pseq ([57]-12, 8), Pseq ([53]-12, 8), Pseq ([55]-12, 8), Pseq ([53]-12, 4),Pseq([55]-12, 4)], inf),
+	db: -24, inst: 'mel4', dur: Prand ([0.5], inf), rel: Prand ([1, 2], inf), arpegiar: 1/4)
+);*/
 
 (
-Mel2.toca (pan: Prand([-0.8, 0, 0.8], inf), nota: Pseq ([[67, 64, 67, 60]], inf) + Prand([12, 0], inf),
-	db: -24, inst: 'mel2', dur: Pseq ([0.25, 0.75, 0.5, 0.5], inf), rel: Prand ([0.75], inf), arpegiar: 1/4)
+Mel.toca (pan: Prand([-0.8, 0, 0.8], inf), nota: Pseq ([Pseq ([57]-12, 16), Pseq ([53]-12, 16), Pseq ([55]-12, 16), Pseq ([53]-12, 8),Pseq([55]-12, 8)], inf),
+	db: -24, inst: 'mel4', dur: Prand ([0.25], inf), rel: Prand ([1, 2], inf), arpegiar: 1/4)
 );
 
+// (
+// Mel2.toca (pan: Prand([-0.8, 0, 0.8], inf), nota: Pseq ([[67, 64, 67, 60]], inf) + Prand([12, 0], inf),
+// db: -24, inst: 'mel2', dur: Pseq ([0.25, 0.75, 0.5, 0.5], inf), rel: Prand ([0.75], inf), arpegiar: 1/4)
+// );
+//
 
 (
 Bajo.toca(inst: 'bajo2',
-	db: -25, nota: Pseq([57, 60, 64, 57, 60, 64, 53, 57, 60, 53, 57, 60,
-		55, 59, 62, 55, 59, 62, 53, 57, 60,      55-12, 55, 62-12, 62], inf) + Pxrand ([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], inf),
+	db: -22, nota: Pseq([57, 60, 64, 57, 60, 64, 53, 57, 60, 53, 57, 60,
+		55, 59, 62, 55, 59, 62, 53, 57, 60, 55-12, 55, 62-12, 62], inf) + Pxrand ([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], inf),
 	rel: Pseq ([Pseq([1, 0.5, 0.5], 7), Pseq(#[0.5, 0.5, 0.5, 0.5], 1) ], inf),
 	dur: Pseq ([Pseq([1, 0.5, 0.5], 7), Pseq(#[0.5, 0.5, 0.5, 0.5], 1) ], inf),
 );
