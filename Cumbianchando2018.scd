@@ -1,28 +1,70 @@
 //Cumbianchando!!!
 RGGTRN.turboCargar;
 
-t = TempoClock.tempo = 100/60;
+t = TempoClock.tempo = 105/60;
 
+Vox.decir(RGGTRN.principio, db: -15, rate: Pseq ((0..0), inf), dur: Pseq ([8], inf));
 //////////////uno
 
-Teclado.toca(inst:'mel3', rel:0.25, db: -20, pan: 0.8, nota: Pseq (#[r, [62, 65, 69]], inf), dur: 0.5);
-Ritmo.toca (bomboDb: -24, guiraDb: -20);
-Bajo.toca(inst:'bajo2', db:-35, nota: Pseq([62,65,69], inf));
+Ritmo.toca(campanaDb:-150, campanaDur: Prand ([1], inf), guiraDb: -25, timbalesAmp: 7, timbalesPan: Prand ([-0.8, 0.8], inf),timbalesFreq: Prand (#[0, 1, 2], inf), timbalesDur: Pseq ([0.25, 0.5], inf), timbalesNum: inf, congaCDb: Pxrand ([-14, -17, -15, -20 ]*2, inf),  congaODb: Prand ([-20,-25, -20, -30], inf), congaOfreq: Pseq (#[0.5, r, 0, r, 1], inf));
 
-///////////////////dos
+Teclado.toca(inst:'mel4', rel:0.25, db: -20, pan: 0.8, nota: Pseq (#[r, [62, 65, 69]], inf), dur: 0.5);
+Bajo.toca(inst:'bajo2', db:-19, nota: Pseq([62,65,69], inf));
 
 ////dos////////////////
 (
-Ritmo.toca (bomboDb: -22, guiraDb: -20);
-Bajo.toca(inst:'bajo2', db:-20, nota:Pseq([62,65,69], inf));
+// Ritmo.toca (bomboDb: -20, guiraDb: -20);
+Bajo.toca(inst:'bajo2', db:-30, nota: Pseq([62,65,69], inf));
 
-	//Pseq([Pseq([62,65,69, 62, 62, 62, \r], 1), Pseq([62,65,69], 8),
-	//Pseq([  62,65,69,  60, 64, 67,], 4), Pseq([62], 1)], inf));
+// Pseq (#[r, [62, 65, 69],r, [62, 65, 69],  r, [60, 64, 67], r, [60, 64, 67]], 4), Pseq([\r], inf)], inf));
+Mel.toca (atk: 0.105, rel: 0.4, inst:'pluck2', db: -20,  nota: Pseq ([Pseq([62, 62, 65, 69,69, 69, 69, 69, 69, 69, 69, 72, 69, 72, 69, 72, 69, 69, 69, 67, 65, \r, 62, 65, 69, 69, 69, 69, 69, 69, 69, 69, 72, 69, 72, 69, 72, 69, 69, 69, 67, 65, \r,
+],1), Pseq ([62, 62, 65], 1)], inf),
 
-Teclado.toca(inst:'mel3', rel:0.25, db: -20, pan: 0.8, dur: 0.5, nota: Pseq([Pseq (#[r, [62, 65, 69], r, [62, 65, 69], [62, 62, 62], [62, 62, 62] , [62, 62, 62], r],1), Pseq(#[r, 62, 65, 69],16),
-	//coro
-	Pseq (#[r, [62, 65, 69],r, [62, 65, 69],  r, [60, 64, 67], r, [60, 64, 67]], 4), Pseq([\r], inf)], inf));
-Mel.toca (atk: 0.105, rel: 0.4, inst:'pad4', db: -20,  nota: Pseq([62, 62, 65, 69,69, 69, 69, 69, 69, 69, 69, 72, 69, 72, 69, 72, 69, 69, 69, 67, 65, \r, 62, 65, 69, 69, 69, 69, 69, 69, 69, 69, 72, 69, 72, 69, 72, 69, 69, 69, 67, 65, \r,
+dur: Pseq ([Pseq([3.5, 0.25!2, 0.25!8, 0.5!4, 0.5!6, 0.5,
+	0.25!2,  0.25!8, 0.5!4, 0.5!6, 1].flat), Pseq ([4,4, 4],1)], inf));
+);
+
+////tres
+(
+// Ritmo.toca (bomboDb: -20, guiraDb: -20);
+Bajo.toca(inst:'bajo2', db:-30, nota: Pseq([62,65,69], inf));
+
+// Pseq (#[r, [62, 65, 69],r, [62, 65, 69],  r, [60, 64, 67], r, [60, 64, 67]], 4), Pseq([\r], inf)], inf));
+Mel.toca (atk: 0.105, rel: 0.4, inst:'pluck2', db: -20,  nota: Pseq ([Pseq([62, 62, 65, 69,69, 69, 69, 69, 69, 69, 69, 72, 69, 72, 69, 72, 69, 69, 69, 67, 65, \r, 62, 65, 69, 69, 69, 69, 69, 69, 69, 69, 72, 69, 72, 69, 72, 69, 69, 69, 67, 65, \r,
+],1), Pseq ([62, 62, 65], 1)], inf),
+
+dur: Pseq ([Pseq([3.5, 0.25!2, 0.25!8, 0.5!4, 0.5!6, 0.5,
+	0.25!2,  0.25!8, 0.5!4, 0.5!6, 1].flat), Pseq ([4,4, 4],1)], inf));
+
+Mel2.toca (atk: 0.105, rel: 0.4, inst:'mel4', db: -20,  nota: Pseq ([Pseq([62, 62, 65, 69,69, 69, 69, 69, 69, 69, 69, 72, 69, 72, 69, 72, 69, 69, 69, 67, 65, \r, 62, 65, 69, 69, 69, 69, 69, 69, 69, 69, 72, 69, 72, 69, 72, 69, 69, 69, 67, 65, \r,
+],1), Pseq ([62, 62, 65], 1)], inf),
+
+dur: Pseq ([Pseq([3.5, 0.25!2, 0.25!8, 0.5!4, 0.5!6, 0.5,
+	0.25!2,  0.25!8, 0.5!4, 0.5!6, 1].flat), Pseq ([4,4, 4],1)], inf));
+);
+
+/////cuatro
+(Mel.toca (atk: 0.105, rel: 0.4, inst:'pluck2', db: -20,  nota: Pseq([62, 62, 65, 69, 69, 69, 69, 69, 69, 69, 69, 72, 69, 72, 69, 72, 69, 69, 69, 67, 65, \r, 62, 65, 69, 69, 69, 69, 69, 69, 69, 69, 72, 69, 72, 69, 72, 69, 69, 69, 67, 65, \r,
+	],inf),
+
+dur: Pseq([0.75, 0.25, 0.25!4,
+	0.75, 0.25,  0.25!4,
+	0.75, 0.25,  0.25!4,
+	0.75, 0.25,  0.25!4,
+	0.75, 0.25,  0.25!4,
+].flat, 4));
+
+
+Mel2.detener;
+)
+//////////////cuatro
+
+// 	//coro
+// Pseq (#[r, [62, 65, 69],r, [62, 65, 69],  r, [60, 64, 67], r, [60, 64, 67]], 4), Pseq([\r], inf)], inf));
+(
+Bajo.toca (inst: 'bajo2', db:-30, nota: Pseq([62,65,69, 60, 64, 67, 62,65,69, 60, 64, 67], inf));
+
+Mel.toca (atk: 0.105, rel: 0.4, inst:'pluck2', db: -20,  nota: Pseq([
 	//coro
 	\r,  62, 65, 69, 65, 69,
 	60, 60, 64, 67, 64, 67,
@@ -34,10 +76,9 @@ Mel.toca (atk: 0.105, rel: 0.4, inst:'pad4', db: -20,  nota: Pseq([62, 62, 65, 6
 	62, 62, 65, 69, 65, 69,
 	60, 60, 64, 67, 65, 64,
 
-	62, 62, 62, 60, 62, \r],inf),
+	62, 62, 62, 60, 62, \r]+12,inf),
 
-dur: Pseq([3.5, 0.25!2, 0.25!8, 0.5!4, 0.5!6, 0.5,
-	0.25!2,  0.25!8, 0.5!4, 0.5!6, 1,
+dur: Pseq([
 	0.75, 0.25, 0.25!4,
 	0.75, 0.25,  0.25!4,
 	0.75, 0.25,  0.25!4,
@@ -48,21 +89,21 @@ dur: Pseq([3.5, 0.25!2, 0.25!8, 0.5!4, 0.5!6, 0.5,
 	0.75, 0.25,  0.25!4,
 	0.75, 0.25,  0.25!4,
 	0.5, 0.5, 0.75, 0.25, 1, 3
-].flat, inf));
+].flat, 2));
 );
 
 ////////cuatro///////////////////
 (
-Ritmo.toca (bomboDb: -22, guiraDb: -25);
+Ritmo.toca (bomboDb: -20, guiraDb: -20);
 Mel.toca (inst:'mel2', db: -10, atk: 0.125, rel: 0.25, nota: \r);
-Bajo.toca (inst: 'bajo2', db:-20, nota: Pseq([62,65,69, 60, 64, 67, 62,65,69, 60, 64, 67], inf));
+Bajo.toca (inst: 'bajo2', db:-30, nota: Pseq([62,65,69, 60, 64, 67, 62,65,69, 60, 64, 67], inf));
 )
 
 /////////////final//////////////////
 (
-Ritmo.toca (bomboDb: -22, guiraDb: -20);
-Bajo.toca(inst:'bajo2', db: -20, nota: Pseq( [62,65,69, 60, 64, 67, 62,65,69, 60, 64, 67], inf));
-Mel.toca (inst:'pad4', db: -20, atk: 0.125, rel: 0.25, nota: Pseq([\r,  62, 65, 69, 65, 69,
+Ritmo.toca (bomboDb: -20, guiraDb: -20);
+Bajo.toca(inst:'bajo2', db: -30, nota: Pseq( [62,65,69, 60, 64, 67, 62,65,69, 60, 64, 67], inf));
+Mel.toca (inst:'pluck2', db: -20, atk: 0.125, rel: 0.25, nota: Pseq([\r,  62, 65, 69, 65, 69,
 	60, 60, 64, 67, 64, 67,
 	62, 62, 65, 69, 65, 69,
 	60, 60, 64, 67, 65, 64,
