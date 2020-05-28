@@ -1,82 +1,15 @@
 //Vamo a darle!!!
 RGGTRN.turboCargar;
+t = TempoClock.tempo = 100/60;
+
+Ritmo.toca(bomboDb:-20, bomboFreq:0, bomboDur:1, guiraDb: -25);
+
 (
 a=w;
-(Pdef(\bombo, Pbind(
-	\instrument,  \samples,
-	\amp, 0.9 * v,
-	\buf, RGGTRN.bombo,
-	\freq,0,
-	\dur, 1,
-)));
 
-(Pdef(\guira, Pbind(
-	\instrument,  \guira,
-\db, -20,
-	\atk, 0.015,
-	\dura, Pseq([1/64,1/32,1/16,1/16]*(80/60) ,inf),
-	\rel, 0.05,
-	\freq, x=1;
-	switch( x,
-		0, Pseq(#[ 1,r, 1, 1],inf)/r,
-		1, Pseq(#[ 1, r, 1, 1],inf)/r,
-		2, Pseq(#[ 1, 1, 1],inf)/r,
-		3, Pseq(#[ 1, 1, 1],inf)/r,
-		4, Pseq(#[ 1, 1, 1],inf)/r,
-		5, Pseq(#[ 1, 1, 1],inf)/r,
-		6, Pseq(#[ 1, r, 1, 1],inf)/r,
-		7, Pseq(#[ 1, 1, 1]+3,inf)/r,
-		8,Pseq(#[ 1, r, 1, 1],inf)/r,
-		9, Pseq(#[ 1, 1, 1, 1]+2,inf)/r,
-					),
+Ritmo.toca(bomboDb:-20, bomboFreq:0, bomboDur:1, guiraDb: -25);
 
-	\dur, y= a;
-	switch(y,
-		0, 0.25/r, 1, 0.25/r, 2, 0.25/r, 3, 0.25/r, 4, 0.25/r, 5, 0.25/r, 6, 0.25/r, 7, 0.25/r, 8, (0.125)/r, 9, 0.125/r),
-)));
-
-
-(Pdef(\timbal, Pbind(
-	\instrument,  \samples,
-	\amp, z=a ;
-	switch(z,
-	0, 0, 1, 2, 2, 2,3, 2,	4, 2, 5, Pseq([0.5, 0.125, 0.125, 0.125], inf), 6, Pseq([2, 0.5, 0.5, 2, 0.5, 0.5, 2, 0.5, 0.5 , 2,0.5, 1], inf),
-		7, Pseq([2, 0.5, 0.5, 2, 0.5, 0.5, 2, 0.5, 0.5 , 2,0.5, 1]+3, inf), 8, 1.5, 9, Prand([2, 1, 1, 2, 1, 1, 2, 1, 1 , 2, 1, 2]-0.4, inf),
-	),
-	\buf, RGGTRN.timbal,
-	\pan, -1,
-	\freq, x=a;
-
-	switch(x,
-		0,  0,
-		1, Pseq(#[r,1,  r,   r, 1,   r]-1,inf),
-		2, Pseq(#[r,1,  r,   r, 1,   r]-1,inf),
-		3, Pseq(#[r,1,  r,   r, 1,   r]-1,inf),
-		4, Pseq(#[r,1,  r,   r, 1,   r]-4,inf),
-		5, Pseq(#[1,r, 1, 1]+3,inf),
-		6, Prand(#[r,1, 1, 1, 1,1, 1, 3, 3],inf),
-		7, Prand(#[r,1, 1, 1, 1, 1, 1, 3, 3],inf),
-		8, Pseq(#[r,1,],inf),
-		9, Pseq(#[1,r, 1, 1]+3,inf),
-			),
-	\dur,  y=a;
-
-	switch(y,
-	0, Pseq([1, 0.5,  0.5, 0.5, 0.5, 1],inf)/r,
-		1, Pseq([0.5, 0.5,  1, 0.5, 0.5, 1],inf)/r,
-		2, Pseq([0.5, 0.5,  1, 0.5, 0.5, 1],inf)/r,
-		3, Pseq([0.5, 0.5,  1, 0.5, 0.5, 1],inf)/r,
-		4, Pseq([0.5, 0.5,  1, 0.5, 0.5, 1],inf)/r,
-		5, Pseq([0.25],inf)/r,
-		6, Pxrand([0.25, 0.5, 0.75, 0.25, 0.25],inf)/r,
-		7, 0.25/r,
-		8, Pseq([0.5],inf)/r,
-		9,  Pseq([0.25],inf)/r,
-
-	),
-)));
-
-(Pdef(\mel, Pbind(\instrument,    \sharp,
+(Pdef(\mel, Pbind(\instrument, \sharp,
 	//\out, 36,
 	\fase, 0.7,
 	\num,2,
@@ -150,7 +83,7 @@ a=w;
 ))));
 )
 
-w=3; /*vol*/ v=(1); r=1;
+w=7; /*vol*/ v=(1); r=1;
 
 //conga?
 o.play;
@@ -159,7 +92,6 @@ f.play;
 m.play;
 q.play;
 
-Pdef(\bombo).play(quant:4);
 Pdef(\mel).play(quant:4);
 Pdef(\pad).play(quant:4);
 Pdef(\guira).play(quant:4);
