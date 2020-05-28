@@ -4,13 +4,19 @@ MandelHub.join("luis", action: {m = MandelHub.instance}); // este si eres seguid
 
 s.record("~/nyc2.wav".standardizePath);
 s.stopRecording;
+// Am, Fmaj, Gmaj, Fmaj, Gmaj
+
 
 //hola banda!!
 
 Vox.decir (buffer: Prand ([RGGTRN.sabro], inf), db:-14, rel: 35, pan: Pseq ([-0.8, 0, 0.8], inf));
-
-
 Vox.decir (buffer: Prand ([RGGTRN.rggtrn], inf), db:-12, rel: 35, pan: Pseq ([-0.8, 0, 0.8], inf));
+Vox.decir (buffer: Prand ([RGGTRN.guau2020], inf), db:0, rel: 35, pan: Pseq ([-0.8, 0, 0.8], inf));
+Vox.decir (buffer: Prand ([RGGTRN.encanta2020], inf), db:0, rel: 35, pan: Pseq ([-0.8, 0, 0.8], inf));
+Vox.decir (buffer: Prand ([RGGTRN.principio2020], inf), db:, rel: 100, pan: Pseq ([-0.8, 0, 0.8], inf));
+Vox.decir (buffer: Prand ([RGGTRN.perron2020], inf), db:0, rel: 50, pan: Pseq ([-0.8, 0, 0.8], inf));
+Vox.decir (buffer: Prand ([RGGTRN.evolucion2020], inf), db:-10, rel: 50, pan: Pseq ([-0.8, 0, 0.8], inf));
+Vox.decir (buffer: Prand ([RGGTRN.intro], inf), db:0, rel: 100, pan: Pseq ([-0.8, 0, 0.8], inf));
 
 
 /////////uno
@@ -20,8 +26,8 @@ Vox.decir (buffer: Prand ([RGGTRN.rggtrn], inf), db:-12, rel: 35, pan: Pseq ([-0
 		//\buf, Prand ([RGGTRN.timbal], inf),
 		\dur, Pseq ([1, 0.5, 0.5, 1, 1]/2, inf),
 		\freq, Pseq ([\r, \r, 100, \r, 100, \r, \r, 100, \r, 100], inf),
-		\db, Pseq ([\r,\r, -25, \r, -27], inf),
-		\pan, 1,
+		\db, Pseq ([\r,\r, -22, \r, -27], inf),
+		\pan, -0.5,
 	).play(quant:4);
 );
 
@@ -30,6 +36,8 @@ Ritmo.toca (bomboDur: 1, bomboDb:-20, bomboFreq: Pseq (#[0,r, r, r], inf), guira
 	guiraDura: Pseq([Pseq([1/64,1/32,1/16,1/16]*(80/60) ,3), Pseq([1/64,1/32,1/16,1/16, 1/16]*(80/60) ,1)], inf),
 	guiraDur: Pseq ([Pseq ([0.5, 0.5, 0.5, 0.5]/2, 3), Pseq ([0.5, 0.5, 0.25, 0.25, 0.5]/2, 1)], inf),  guiraPan: 0.8, guiraDb: Pseq ([Pseq ([-20, -20, -25, -25], 3), Pseq ([-20, -20, -25, -25, -25], inf)], inf)*400,  campanaDb: Pseq([ Pseq ([-80, -80, -80, -80, -20, -20]/0.05, 1), Pseq ([-80, -80, -80, -80, -20, -80]/0.05, 1)], inf), campanaDur: Pseq ([1, 1,1, 0.5, 0.25, 0.25], inf), campanaFreq: 12, campanaPan: 1);
 );
+
+[[57, 60, 64], [57, 60, 64], [57, 60, 64], [57, 60, 64], [53, 57, 60],  [53, 57, 60],  [53, 57, 60],  [53, 57, 60],  [55, 59, 62],  [55, 59, 62],   [55, 59, 62],  [55, 59, 62],  [53, 57, 60],  [53, 57, 60],   [55, 59, 62],  [55, 59, 62]] +12
 
 
 (
@@ -77,13 +85,12 @@ Pbindef (\hi,
 
 (
 Bajo.toca(inst: 'bajo2',
-	db: -30, nota: Pseq([57, 60, 64, 57, 60, 64, 53, 57, 60, 53, 57, 60,
+	db: -20, nota: Pseq([57, 60, 64, 57, 60, 64, 53, 57, 60, 53, 57, 60,
 		55, 59, 62, 55, 59, 62, 53, 57, 60,  55-12, 55, 62-12, 62]+12, inf),
 	rel: Pseq ([Pseq([1, 0.5, 0.5], 7), Pseq(#[0.5, 0.5, 0.5, 0.5], 1) ], inf),
 	dur: Pseq ([Pseq([1, 0.5, 0.5], 7), Pseq(#[0.5, 0.5, 0.5, 0.5], 1) ], inf),
+	pan: 0;
 );
-
-
 )
 
 Mel2.toca (pan: Prand([1], inf), nota: Pseq ([Pseq ([57, 56], 8), Pseq ([57, 53], 8), Pseq ([55, 54], 8), Pseq ([53], 8), Pseq([55]-12, 8)], inf), db: -17, inst: 'pluck', dur: Prand ([0.25], inf), rel: Prand ([1, 0.5], inf), arpegiar: 1/4);
@@ -99,10 +106,12 @@ Mel2.detener;
 Pbindef (\hi).stop;
 (
 Bajo.toca(inst: 'bajo2',
-	db: Pseq ([-30], inf),
+	db: Pseq ([-18], inf),
 	nota: Pseq([57, \r, 64,   57, \r,  64], inf),
 	rel: Pseq ([0.75, 0.25,1], inf),
-	dur:Pseq([0.75,0.25,1], inf)
+	dur:Pseq([0.75,0.25,1], inf),
+	pan: 0;
+
 )
 );
 
@@ -120,7 +129,7 @@ Pbindef (\jarana,
 (
 Ritmo.toca ( guiraFreq: Pseq([Pseq(#[1,r, 1, 1],3), Pseq (#[1, r, 1, 1], 1)], inf) ,
 	guiraDura: Pseq([Pseq([1/64,1/32,1/16,1/16]*(80/60) ,3), Pseq([1/64,1/32,1/16,1/16]*(80/60) ,1)], inf),
-	guiraDur: Pseq ([Pseq ([0.5, 0.5, 0.5, 0.5]/2, 3), Pseq ([0.5, 0.5, 0.5,  0.5]/2, 1)], inf),  guiraPan: 0.8, guiraDb: Pseq ([Pseq ([-20, -20, -25, -25], 3), Pseq ([-20, -20, -25, -25], inf)], inf)*1,  campanaDb: Pseq([ Pseq ([-100, -100, -100, -100, -20, -20], 1), Pseq ([-100, -100, -100, -100, -20, -100], 1)], inf)-0, campanaDur: Pseq ([1, 1,1, 0.5, 0.25, 0.25], inf));
+	guiraDur: Pseq ([Pseq ([0.5, 0.5, 0.5, 0.5]/2, 3), Pseq ([0.5, 0.5, 0.5,  0.5]/2, 1)], inf),  guiraPan: 0.8, guiraDb: Pseq ([-10], inf)  + Prand ([0.5, 1, 0.2], inf),  campanaDb: Pseq([ Pseq ([-100, -100, -100, -100, -20, -20], 1), Pseq ([-100, -100, -100, -100, -20, -100], 1)], inf)-0, campanaDur: Pseq ([1, 1,1, 0.5, 0.25, 0.25], inf));
 );
 )
 (
@@ -165,10 +174,12 @@ Pbindef (\hi,
 
 (
 Bajo.toca(inst: 'bajo2',
-	db: Pseq ([-30], inf),
+	db: Pseq ([-18], inf),
 	nota: Pseq([57, \r, 64,   57, \r,  64, 53, \r, 60, 53, \r, 60, 55, \r, 62, 55, \r, 62,  53, \r, 60, 55-12, \r, 62-12], inf),
 	rel: Pseq ([0.75, 0.25,1], inf),
-	dur:Pseq([0.75,0.25,1], inf)
+	dur:Pseq([0.75,0.25,1], inf),
+	pan: 0;
+
 )
 );
 
@@ -193,10 +204,11 @@ Mel.toca (pan: Prand([0], inf), nota: Pseq([Pseq ([52, 52, 57, 60,  52, 52, 57, 
 
 
 Bajo.toca(inst: 'bajo2',
-	db: Pseq ([-30], inf),
+	db: Pseq ([-18], inf),
 	nota:Pseq([Pseq([57, \r, 64,   57, \r,  64,  53, \r, 60,   53, \r, 60], 3),  Pseq([57, \r, 64,    57, \r,  64,     53, \r, 60,   53,  \r, 56], 1)], inf),
 	rel: Pseq ([0.75, 0.25,1], inf),
-	dur:Pseq([0.75,0.25,1], inf));
+	dur:Pseq([0.75,0.25,1], inf),
+	pan: 0);
 
 
 Pbindef (\jarana,
@@ -207,33 +219,34 @@ Pbindef (\jarana,
 \dur, 0.5,
 \pan, Pseq([-0.8], inf),
 \rel, 0.05,
-\db, -30,
+\db, -25,
 ).play(quant:4);
 
 
 )
 
-//seis
+//seis (solo)
 
 (
-
+// 52, 52, 57, 64,  52, 52, 57, 64,  52, 52, 57, 64, 57, 55,  52, 52, 57, 64,   52, 52, 57, 52,    52, 52, 57, 52,  52
 Mel2.detener;
 
-Mel.toca (pan: Prand([0], inf), nota: Prand ([52, 52, 57, 64,  52, 52, 57, 64,  52, 52, 57, 64, 57, 55,  52, 52, 57, 64,   52, 52, 57, 52,    52, 52, 57, 52,  52]+12, inf),
-	db: -19, inst: Pseq (['mel4'], inf),
-	dur: Pseq([Pseq ([0.25, 0.25, 0.25,  0.25,  0.25,  0.25,  0.25, 0.25,  0.25, 0.25, 0.25, 0.25,   0.25,  0.75,
-		0.25, 0.25, 0.25,  0.25,  0.25,   0.25,   0.25, 0.25,  0.25, 0.25, 0.25, 0.25, 1], 2)], inf), rel: Pseq ([0.5], inf));
+Mel.toca (pan: Prand([0], inf), nota: Pseq (#[57], inf),
+	db: -25, inst: Pseq (['pad3'], inf),
+	dur: Pseq ([4], inf), rel: Pseq ([4], inf));
 
 
 Bajo.detener;
-// Bajo.toca(inst: 'bajo2',
-// 	db: Pseq ([-20], inf),
-// 	nota:Pseq([57, \r, 64,   57, \r,  64,  53, \r, 60,   53, \r, 60], inf),
-// 	rel: Pseq ([0.75, 0.25,1], inf),
-// dur:Pseq([0.75,0.25,1], inf));
+Bajo.toca(inst: 'bajo2',
+	db: Pseq ([-18], inf),
+	nota:Pseq([57, \r, 64,   57, \r,  64,  53, \r, 60,   53, \r, 60], inf),
+	rel: Pseq ([0.75, 0.25,1], inf),
+	dur:Pseq([0.75,0.25,1], inf),
+pan: 0);
 
 
 Pbindef (\jarana,
+
 \instrument,  \pad3,
 \midinote, Pseq([\r, [57, 64], \r, [57,  64], \r, [57,  64], \r, [57,  64],
 \r, [53,  60], \r, [53,60], \r, [53,  60], \r, [53,  60]], inf),
@@ -241,14 +254,10 @@ Pbindef (\jarana,
 \dur, 0.5,
 \pan, Pseq([-0.8], inf),
 \rel, 0.05,
-\db, -30,
+\db, -25,
 ).play(quant:4);
 
 )
-
-
-
-
 
 
 
@@ -256,8 +265,7 @@ Pbindef (\jarana,
 
 /////////cinco (Transición)
 (
-~vol = 20;
-
+~vol = 1;
 
 Pbindef (\hi,
 	\instrument,  \hi,

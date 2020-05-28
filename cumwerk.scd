@@ -7,7 +7,7 @@ Ritmo.toca(bomboDb:-20, bomboFreq:0, bomboDur:1, guiraDb: -25);
 (
 a=w;
 
-Ritmo.toca(bomboDb:-20, bomboFreq:0, bomboDur:1, guiraDb: -25);
+// Ritmo.toca(bomboDb:-20, bomboFreq:0, bomboDur:1, guiraDb: -25);
 
 (Pdef(\mel, Pbind(\instrument, \sharp,
 	//\out, 36,
@@ -83,7 +83,7 @@ Ritmo.toca(bomboDb:-20, bomboFreq:0, bomboDur:1, guiraDb: -25);
 ))));
 )
 
-w=7; /*vol*/ v=(1); r=1;
+w=1; /*vol*/ v=(1); r=1;
 
 //conga?
 o.play;
@@ -93,10 +93,11 @@ m.play;
 q.play;
 
 Pdef(\mel).play(quant:4);
+
 Pdef(\pad).play(quant:4);
 Pdef(\guira).play(quant:4);
 Pdef(\bajo).play(quant:4);
-//Pdef(\timbal).play(quant:4);
+// Pdef(\timbal).play(quant:4);
 
 Pdef(\bombo).stop;
 Pdef(\timbal).stop;
